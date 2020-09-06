@@ -1,0 +1,15 @@
+name: "Jira Issue Key Checker"
+description: "Checks If a PR contains its linked Jira issue key in both the title and the description."
+branding:
+  icon: "tag"
+  color: "purple"
+on: [pull_request]
+inputs:
+  GITHUB_TOKEN:
+    required: true
+  jira-prefix:
+    required: true
+    description: "Jira issue key prefix. Ex. ABC-1111, prefix would be ABC"
+runs:
+  using: "node12"
+  main: "index.js"
