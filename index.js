@@ -1,6 +1,6 @@
-import { core } from "@actions/core";
-import { github } from "@actions/github";
-import { Octokit } from "@octokit/action";
+import * as core from "@actions/core";
+import * as github from "@actions/github";
+const { Octokit } = require("@octokit/action");
 
 const [owner, repo] = process.env.GITHUB_REPOSITORY.split("/");
 const issueNumber = process.env.GITHUB_REF.split("/")[2];
