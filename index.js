@@ -8,7 +8,7 @@ async function run() {
     const prTitle = github.context.payload.pull_request.title;
     const prBody = github.context.payload.pull_request.body;
 
-    let regex = new RegExp(`${jiraPrefix}}-[0-9]+`);
+    let regex = new RegExp(`${jiraPrefix}-[0-9]+`);
     if (!regex.test(prTitle) || !regex.test(prBody)) {
       core.setFailed("Jira Issue Key missing in PR title or description.");
       return;
